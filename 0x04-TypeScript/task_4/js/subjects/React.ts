@@ -4,14 +4,19 @@ namespace Subjects {
         experienceTeachingReact?: number;
     }
 
-    export class React extends Subject{
+    export class React extends Subject {
+
         getRequirements(): string {
             return 'Here is the list of requirements for React';
         }
 
         getAvailableTeacher(): string {
-            const xp = this.teacher.experienceTeachingReact;
-            return typeof xp === 'number' && xp > 0 ? `Available Teacher: ${this.teacher.firstName}` : 'No available teacher';
+            const teachingExpReact = this.teacher.experienceTeachingReact;
+            if (typeof teachingExpReact === 'number' && teachingExpReact > 0) {
+                return `Available teacher ${this.teacher.firstName}`
+            } else {
+                return 'No available teacher';
+            }
         }
     }
 }

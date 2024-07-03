@@ -4,14 +4,19 @@ namespace Subjects {
         experienceTeachingJava?: number;
     }
 
-    export class Java extends Subject{
+    export class Java extends Subject {
         getRequirements(): string {
             return 'Here is the list of requirements for Java';
         }
 
         getAvailableTeacher(): string {
-            const xp = this.teacher.experienceTeachingJava;
-            return typeof xp === 'number' && xp > 0 ? `Available Teacher: ${this.teacher.firstName}` : 'No available teacher';
+            const teachingExpJava = this.teacher.experienceTeachingJava;
+            if (typeof teachingExpJava === 'number' && teachingExpJava > 0) {
+                return `Available Teacher: ${this.teacher.firstName}`;
+            } else {
+                return 'No available teacher';
+            }
         }
     }
+
 }

@@ -1,7 +1,7 @@
 /// <reference path="Teacher.ts" />
 namespace Subjects {
     export interface Teacher {
-        experienceTeachingC?: number;
+        experienceTeachingC?: number;  
     }
 
     export class Cpp extends Subject {
@@ -10,8 +10,8 @@ namespace Subjects {
         }
 
         getAvailableTeacher(): string {
-            const xp = this.teacher.experienceTeachingC;
-            if(typeof xp === 'number' && xp > 0){
+            const teachingExpCPP = this.teacher.experienceTeachingC;
+            if(typeof teachingExpCPP === 'number' && teachingExpCPP > 0){
                 return `Available Teacher: ${this.teacher.firstName}`;
             } else {
                 return 'No available teacher';

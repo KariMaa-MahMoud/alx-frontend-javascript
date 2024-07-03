@@ -1,4 +1,4 @@
-/// <reference path="Teacher.ts" />
+/// <reference path="./Teacher.ts" />
 namespace Subjects {
     export class Subject {
         teacher: Subjects.Teacher;
@@ -7,4 +7,4 @@ namespace Subjects {
             this.teacher = teacher;
         }
     }
-}
+} 
